@@ -168,3 +168,7 @@ th.center{
 .modal-body span {
     color: #000;
 }
+
+.navbar-brand::hover{
+    background: #343a40 !important;
+}

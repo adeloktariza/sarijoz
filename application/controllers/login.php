@@ -16,6 +16,7 @@ class Login extends CI_Controller {
 		}else{
 			$data['username'] = $this->session->userdata('username');
         	$this->load->view('view_admin', $data);
+        	redirect('adminController');
 		}
 		
 	}
@@ -32,11 +33,13 @@ class Login extends CI_Controller {
     		$this->session->set_userdata('username',$username);
     		$data['username'] = $this->session->userdata('username');
     		$this->load->view('view_admin', $data);
+    		redirect('adminController');
     	}
     	else{
 
     		$message = "Anda gagal masuk";
 			echo "<script type='text/javascript'>alert('$message');</script>";
+			redirect('login');
 
     	}
 	}

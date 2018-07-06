@@ -4,7 +4,7 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <img class="logo-sari" src="<?php echo base_url();?>/assets/images/logo_fix.jpg">
-    <a class="navbar-brand" href="index.html">PT. SARIJOZ INDONESIA</a>
+    <a class="navbar-brand" href="#">PT. SARIJOZ INDONESIA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -81,7 +81,7 @@
 			  		<div class="panel panel-default">
             <div class="panel-heading" style="border: none; margin:0 10px;">
                 <a class="btn btn-flat btn-labeled btn-primary" href="" data-toggle="modal" data-target="#tambah-produk">
-                  <span class="btn-label icon fa fa-download"></span>&nbsp;&nbsp;Tambah data Produk
+                  <span class="btn-label icon fa fa-download"></span>&nbsp;&nbsp;Tambah data produk
                 </a>
             </div>
 						<div class="panel-body">
@@ -243,7 +243,7 @@
                 <form role="form" action="<?php echo base_url('AdminController/add_produk');?>" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Produk</label>
-                  <input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Masukkan nama suplier" name="nama_produk" required autofocus>
+                  <input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Masukkan nama produk" name="nama_produk" required autofocus>
                 </div>
                 <div class="form-group">
                   <label for="exampleSelect1">Kategori</label>
@@ -272,7 +272,7 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">keterangan</label>
-                 <textarea class="form-control" id="keterangan" rows="4" name="keterangan" placeholder="Masukkan alamat"></textarea>
+                 <textarea class="form-control" id="keterangan" rows="4" name="keterangan" placeholder="Masukkan keterangan"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tambah</button>

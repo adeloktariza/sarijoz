@@ -4,7 +4,7 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <img class="logo-sari" src="<?php echo base_url();?>/assets/images/logo_fix.jpg">
-    <a class="navbar-brand" href="index.html">PT. SARIJOZ INDONESIA</a>
+    <a class="navbar-brand" href="#">PT. SARIJOZ INDONESIA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

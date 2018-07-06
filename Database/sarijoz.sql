@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Jul 2018 pada 17.27
+-- Generation Time: 06 Jul 2018 pada 17.43
 -- Versi Server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -32,6 +32,14 @@ CREATE TABLE `kategori` (
   `keterangan_kategori` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `keterangan_kategori`) VALUES
+(4, 'Botol Plastik', 'Botol yang berbahan dasar plastik'),
+(5, 'Botol Anti Karat', 'Botol yang berbahan dasar kaca');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,14 @@ CREATE TABLE `produk` (
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `produk`
+--
+
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `id_kategori`, `id_suplier`, `harga`, `keterangan`) VALUES
+(4, 'Botol Cola Cola', 5, 6, 7000, '...'),
+(5, 'Botol Balsem GPU yahud', 4, 6, 2500, '...');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +75,14 @@ CREATE TABLE `suplier` (
   `telepon` varchar(25) NOT NULL,
   `alamat` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `suplier`
+--
+
+INSERT INTO `suplier` (`id_suplier`, `nama_suplier`, `telepon`, `alamat`) VALUES
+(6, 'PT. KACA PERINDE', '08765432345', 'Jln Kyai Hajar Dewantara Bogor Jawa Barat'),
+(7, 'PT CAHYA AIRI MANDIRI ', '082153467891', 'Jl Ahmad Sobana Tegal Gundil Kota Bogor');
 
 -- --------------------------------------------------------
 
@@ -117,17 +141,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `suplier`
 --
 ALTER TABLE `suplier`
-  MODIFY `id_suplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_suplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user`
 --
