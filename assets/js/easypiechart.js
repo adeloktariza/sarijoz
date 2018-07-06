@@ -9,15 +9,15 @@
 
 (function(root, factory) {
     if(typeof exports === 'object') {
-        module.exports = factory(require('jquery'));
+        module.exports = factory();
     }
     else if(typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define([], factory);
     }
     else {
-        factory(root.jQuery);
+        root['EasyPieChart'] = factory();
     }
-}(this, function($) {
+}(this, function() {
 
 /**
  * Renderer to render the chart on a canvas object
@@ -344,16 +344,7 @@ var EasyPieChart = function(el, opts) {
 	init();
 };
 
-$.fn.easyPieChart = function(options) {
-	return this.each(function() {
-		var instanceOptions;
 
-		if (!$.data(this, 'easyPieChart')) {
-			instanceOptions = $.extend({}, options, $(this).data());
-			$.data(this, 'easyPieChart', new EasyPieChart(this, instanceOptions));
-		}
-	});
-};
-
+return EasyPieChart;
 
 }));

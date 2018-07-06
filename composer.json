@@ -1,23 +1,24 @@
 {
-	"description": "The CodeIgniter framework",
-	"name": "codeigniter/framework",
+	"description": "CodeIgniter 3.0.0 with ORM and Twig",
+	"name": "timexstudio/codeigniter-3-orm-twig",
 	"type": "project",
-	"homepage": "https://codeigniter.com",
+	"homepage": "http://codeigniter.com",
 	"license": "MIT",
 	"support": {
 		"forum": "http://forum.codeigniter.com/",
 		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
-		"slack": "https://codeigniterchat.slack.com",
+		"irc": "irc://irc.freenode.net/codeigniter",
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.3.7"
+		"php": ">=5.2.4",
+		"filp/whoops": "2.*"
 	},
-	"suggest": {
-		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
-	},
-	"require-dev": {
-		"mikey179/vfsStream": "1.1.*",
-		"phpunit/phpunit": "4.* || 5.*"
-	}
+	"minimum-stability": "dev",
+    	"prefer-stable": true,
+	"extra": {
+        "branch-alias": {
+            "dev-master": "1.2-dev"
+        }
+    }
 }
