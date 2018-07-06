@@ -195,8 +195,9 @@ class AdminController extends CI_Controller {
 		redirect('AdminController/page_suplier');
 	}
 
-	public function add_produk(){
-
+	public function add_produk()
+	{
+		
 
 		$nama_produk = $this->input->post('nama_produk');
 		$nama_kategori = $this->input->post('addKategori');
@@ -214,6 +215,7 @@ class AdminController extends CI_Controller {
 			'keterangan' => $keterangan,
 			);
 
+	
 		$query = $this->produk_m->add_produk($data);
 
 		if ($query) {
@@ -221,6 +223,38 @@ class AdminController extends CI_Controller {
         }else{ 
         	$message = array('status' => true, 'message' => 'Gagal menambahkan suplier');
         }
+
+		redirect('AdminController/page_produk');
+	}
+
+	public function update_produk()
+	{
+		$id= $this->uri->segment(3);
+
+		$nama_produk = $this->input->post('nama_produk');
+		$nama_kategori = $this->input->post('addKategori');
+		$nama_suplier = $this->input->post('addSuplier');
+		$harga = $this->input->post('harga');
+		$keterangan = $this->input->post('keterangan');
+		
+ 
+		$data = array(
+			'id_produk' => "",
+			'nama_produk' => $nama_produk,
+			'id_kategori' => $nama_kategori,
+			'id_suplier' => $nama_suplier,
+			'harga' => $harga,
+			'keterangan' => $keterangan,
+			);
+
+		$where = array(
+			'id_produk' => $id
+		);
+
+
+		$this->produk_m->update_produk($where,$data);
+
+	
 
 		redirect('AdminController/page_produk');
 	}

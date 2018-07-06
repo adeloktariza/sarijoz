@@ -77,69 +77,70 @@
 		    <div class="row">
 			  <div id="" class="box-wrap">
 	
-				    <div class="col-md-4 respon">
-				      <div class="bignotepad bignotepad- bignotepad-medium">
-				          <div class="bignotepad-inner">
-				              <div class="img-notepad">
-				                <img src="<?php echo base_url()?>assets/images/speaker.png" alt="eAZy Payment" />               
-				              </div>
-				              <div class="img-desc">
-				                <h3>LAPORAN</h3>
-				                <div class="bignotepad-copy text-desc">
-				                   Laporan dari seluruh user terhadap pelanggaran.
-				                </div> 
-				              </div>  
-				                              
-				              <div class="bignotepad-footer btn-position" >
-				                 <a href="<?php echo base_url('admin/adminController/page_laporan'); ?>" class="btn btn-direct">
-				                    <span>Panel Laporan</span>
-				                 </a>
-				              </div>     
-				          </div>
-				      </div>
-				    </div>
-					<div class="col-md-4 respon">
-				      <div class="bignotepad bignotepad- bignotepad-medium">
-				          <div class="bignotepad-inner">
-				              <div class="img-notepad">
-				                <img src="<?php echo base_url()?>assets/images/news.png" alt="eAZy Payment" />               
-				              </div>
-				              <div class="img-desc">
-				                <h3>BERITA</h3>
-				                <div class="bignotepad-copy text-desc">
-				                   Berita tentang laporan yang telah ditindak lanjuti oleh instansi.
-				                </div> 
-				              </div>  
-				                              
-				              <div class="bignotepad-footer btn-position" >
-				                 <a href="<?php echo base_url('admin/adminController/page_berita'); ?>" class="btn btn-direct" target="_blank">
-				                    <span>Panel Berita</span>
-				                 </a>
-				              </div>     
-				          </div>
-				      </div>
-				    </div>	 	 
-					<div class="col-md-4 respon">
-				      <div class="bignotepad bignotepad- bignotepad-medium">
-				          <div class="bignotepad-inner">
-				              <div class="img-notepad">
-				                <img src="<?php echo base_url()?>assets/images/category.png" alt="eAZy Payment" />               
-				              </div>
-				              <div class="img-desc">
-				                <h3>KATEGORI</h3>
-				                <div class="bignotepad-copy text-desc">
-				                   kategori dari setiap laporan beserta instansi terkait.
-				                </div> 
-				              </div>  
-				                              
-				              <div class="bignotepad-footer btn-position" >
-				                 <a href="<?php echo base_url('admin/adminController/page_kategori'); ?>" class="btn btn-direct" target="">
-				                    <span>Panel Kategori</span>
-				                 </a>
-				              </div>     
-				          </div>
-				      </div>
-				    </div>	 
+			    <div class="col-md-4 respon">
+			      <div class="bignotepad bignotepad- bignotepad-medium">
+			          <div class="bignotepad-inner">
+			              <div class="img-notepad">
+		                   <i class="fa fa-user"></i>               
+			              </div>
+			              <div class="img-desc">
+			                <h3>SUPLIER</h3>
+			              </div>
+                    <div class="img-desc">
+                      <h3>10</h3>
+                    </div>  
+			                              
+			              <div class="bignotepad-footer btn-position" >
+			                 <a href="<?php echo base_url('adminController/page_suplier'); ?>" class="btn btn-direct">
+			                    <span>Panel Suplier</span>
+			                 </a>
+			              </div>     
+			          </div>
+			      </div>
+			    </div>
+          <div class="col-md-4 respon">
+            <div class="bignotepad bignotepad- bignotepad-medium">
+                <div class="bignotepad-inner">
+                    <div class="img-notepad">
+                       <i class="fa fa-archive"></i>               
+                    </div>
+                    <div class="img-desc">
+                      <h3>Produk</h3>
+                    </div>
+                    <div class="img-desc">
+                      <h3>1000</h3>
+                    </div>  
+                                    
+                    <div class="bignotepad-footer btn-position" >
+                       <a href="<?php echo base_url('adminController/page_produk'); ?>" class="btn btn-direct">
+                          <span>Panel Produk</span>
+                       </a>
+                    </div>     
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 respon">
+            <div class="bignotepad bignotepad- bignotepad-medium">
+                <div class="bignotepad-inner">
+                    <div class="img-notepad">
+                       <i class="fa fa-cubes"></i>               
+                    </div>
+                    <div class="img-desc">
+                      <h3>KATEGORI</h3>
+                    </div>
+                    <div class="img-desc">
+                      <h3>2</h3>
+                    </div>  
+                                    
+                    <div class="bignotepad-footer btn-position" >
+                       <a href="<?php echo base_url('adminController/page_kategori'); ?>" class="btn btn-direct">
+                          <span>Panel Kategori</span>
+                       </a>
+                    </div>     
+                </div>
+            </div>
+          </div>
+	
 			  </div>
 		    </div>
 			<!-- --------------------------------------------------------- -->

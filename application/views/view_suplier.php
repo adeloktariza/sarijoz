@@ -69,7 +69,7 @@
 	      <!-- Breadcrumbs-->
 	      <ol class="breadcrumb">
 	        <li class="breadcrumb-item">
-	          <a href="#">Admin sarijoz</a>
+	          <a href="#">Admin Panel</a>
 	        </li>
 	        <li class="breadcrumb-item active">Manajemen Suplier</li>
 	      </ol>
@@ -196,7 +196,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan</button>
-                <button type="submit" class="btn btn-secondary" style="width: 100%;">Batal</button>
+                <button data-dismiss="modal" class="btn btn-secondary" style="width: 100%;">Batal</button>
               </form>
           </div>
           
@@ -232,6 +232,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tambah</button>
+                <button data-dismiss="modal" class="btn btn-secondary" style="width: 100%;">Batal</button>
               </form>
           </div>
           

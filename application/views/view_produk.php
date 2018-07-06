@@ -69,7 +69,7 @@
 	      <!-- Breadcrumbs-->
 	      <ol class="breadcrumb">
 	        <li class="breadcrumb-item">
-	          <a href="#">Admin sarijoz</a>
+	          <a href="#">Admin Panel</a>
 	        </li>
 	        <li class="breadcrumb-item active">Manajemen Produk</li>
 	      </ol>
@@ -172,8 +172,8 @@
                     
     foreach ($produk as $p) { ?>
 
-    <div class="modal fade" id="edit-suplier-<?php echo $p->id_produk;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="edit-produk-<?php echo $p->id_produk;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Edit Data Produk</h5>
@@ -183,22 +183,43 @@
           </div>
 
           <div class='modal-body'>
-                <form role="form" action="<?php echo base_url('AdminController/update_suplier');?>/<?php echo $p->id_suplier;?>" method="post">
+                <form role="form" action="<?php echo base_url('AdminController/update_produk');?>/<?php echo $p->id_produk;?>" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Produk</label>
-                  <input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Masukkan nama suplier" name="nama_produk" value="<?php echo $p->nama_produk?>" required autofocus>
+                  <input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Masukkan nama suplier" name="nama_produk" value="<?php echo $p->nama_produk;?>" required autofocus>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Telepon</label>
-                  <input type="text" class="form-control" id="telepon" aria-describedby="emailHelp" placeholder="Masukkan nomor telepon" name="telepon" value="<?php echo $p->telepon?>" required>
+                  <label for="exampleSelect1">Kategori</label>
+                  <select class="form-control" id="exampleSelect1" name="addKategori">
+                          <option value="<?php echo $p->id_kategori;?>"><?php echo $p->nama_kategori;?></option>
+                      <?php foreach($kategori as $k) { ?>
+                          <option value="<?php echo $k->id_kategori;?>"><?php echo $k->nama_kategori;?></option>
+                      <?php } ?>
+                  </select>
+                   <small id="fileHelp" class="form-text text-muted">Pilih kategori sesuai jenis</small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Alamat</label>
-                 <textarea class="form-control" id="alamat" rows="4" name="alamat" placeholder="Masukkan alamat"><?php echo $p->alamat?></textarea>
+                  <label for="exampleSelect1">Suplier</label>
+                  <select class="form-control" id="exampleSelect1" name="addSuplier">
+                          <option value="<?php echo $p->id_suplier;?>"><?php echo $p->nama_suplier;?></option>
+                      <?php foreach($suplier as $s) { ?>
+                          <option value="<?php echo $s->id_suplier;?>"><?php echo $s->nama_suplier;?></option>
+                      <?php } ?>
+                  </select>
+                   <small id="fileHelp" class="form-text text-muted">Pilih suplier</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Harga</label>
+                  <input type="text" class="form-control" id="harga" aria-describedby="emailHelp" placeholder="Masukkan harga barang" name="harga" value="<?php echo $p->harga;?>" required autofocus>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Simpan</button>
-                <button type="submit" class="btn btn-secondary" style="width: 100%;">Batal</button>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">keterangan</label>
+                 <textarea class="form-control" id="keterangan" rows="4" name="keterangan" placeholder="Masukkan alamat"><?php echo $p->keterangan;?>" </textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Tambah</button>
+                <button data-dismiss="modal" class="btn btn-secondary" style="width: 100%;">Batal</button>
               </form>
           </div>
           
@@ -255,6 +276,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tambah</button>
+                <button data-dismiss="modal" class="btn btn-secondary" style="width: 100%;">Batal</button>
               </form>
           </div>
           

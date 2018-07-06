@@ -101,7 +101,7 @@
 								      <th class="id_table"><?php echo $u->id_user?></th>
 								      <td><?php echo $u->username?></td>
 								      <td class="id_table">
-								      	  <button type='button' class='btn btn-danger' data-toggle="modal" data-target="#hapus-user-<?php echo $u->id_user;?>"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Hapus</button>
+								      	  <button type='button' class='btn btn-danger' data-toggle="modal" data-target="#hapus-user-<?php echo $u->id_user;?>"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 
 								      </td>
 								    </tr>
@@ -124,6 +124,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tambah</button>
+                <button data-dismiss="modal" class="btn btn-secondary" style="width: 100%;">Batal</button>
               </form>
               </div>
 						</div>

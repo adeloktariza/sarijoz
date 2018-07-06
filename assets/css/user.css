@@ -358,5 +358,18 @@ table.list-t th.id_table, table.list-t td.id_table{
 }
 .logo-sari{
 	width: 36px;
-	
+
+}
+
+.breadcrumb-item a{
+	color:blue;
+}
+.breadcrumb-item a::hover{
+	color:#000;
+}
+.img-notepad i{
+    font-size: 68px;
+    text-align: center;
+    width: 100%;
+    margin-top: 22px;
 }

@@ -36,7 +36,7 @@ body.sticky-footer .content-wrapper{
 .bignotepad-medium {
     /* height: 310px; */
     width: 100%;
-    height: 306px;
+    height: 267px;
 }
 
 .bignotepad-inner * {
@@ -70,7 +70,7 @@ body.sticky-footer .content-wrapper{
 
 .img-notepad {
     width: 100%;
-    height: 125px;
+    height: 100px;
     /* padding-top: 15px; */
     left: 0;
     right: 0;
@@ -88,11 +88,11 @@ body.sticky-footer .content-wrapper{
 .img-desc h3 {
     float: left;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 4px;
     padding-bottom: 10px;
     text-align: center;
-    font-size: 24px;
-    line-height: 23px;
+    font-size: 34px;
+    line-height: 14px;
 }
 .text-desc {
     float: left;
@@ -106,7 +106,7 @@ body.sticky-footer .content-wrapper{
 }
 .bignotepad-footer {
     position: absolute;
-    bottom: 13px;
+    bottom: 20px;
 }
 .btn-position {
     /* margin-bottom: -20px; */
