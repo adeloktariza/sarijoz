@@ -341,3 +341,14 @@ label.mobile_menu span {
     color: #000;
 }
 
+.page-b{
+	border: 1px solid #ccc;
+	padding:10px;
+}
+
+table.list-t thead{
+	text-align: center;
+}
+table.list-t th.id_table, table.list-t td.id_table{
+	text-align: center;
+}

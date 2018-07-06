@@ -2,9 +2,9 @@
 
 class Login extends CI_Controller {
 
-	function __construct(){
+	public function __construct(){
 		parent::__construct();		
-		// $this->load->model('model_user');
+		$this->load->model('user_m');
 		$this->load->library('twig');
 		$this->twig->add_function('base_url');
  
@@ -14,55 +14,35 @@ class Login extends CI_Controller {
 		if ($this->session->userdata('username') == "") {
 			$this->load->view('view_login');
 		}else{
-			if ($this->session->userdata('level') == 2) {
-				redirect('pendudukController');
-			}
-			elseif ($this->session->userdata('level') == 1) {
-				redirect('instansiController');
-			}
-			elseif ($this->session->userdata('level') == 0) {
-				redirect('adminController');
-			}		
+			$data['username'] = $this->session->userdata('username');
+        	$this->load->view('view_admin', $data);
 		}
 		
 	}
 
-	public function cek_login() {
+	public function prosesLogin()
+	{
 
-		$data = array('username' => $this->input->post('username', TRUE),
-					  'password' => md5($this->input->post('password', TRUE)));
+		$username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $data = $this->user_m->user_login($username,$password)->result();
 
-		//$hasil = $this->model_user->cek_user($data);
+       
+    	if($data == TRUE){
+    		$this->session->set_userdata('username',$username);
+    		$data['username'] = $this->session->userdata('username');
+    		$this->load->view('view_admin', $data);
+    	}
+    	else{
 
-		$users = User::where('username',$data['username'])->first();
+    		$message = "Anda gagal masuk";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 
-		if ($users) 
-		{
-			$sess_data = [];
-			$sess_data['id_user'] = $users->id_user;
-			$sess_data['username'] = $users->username;
-			$sess_data['level'] = $users->level;
-			$this->session->set_userdata($sess_data);
-
-			if ($this->session->userdata('level') == 2) {
-				redirect('pendudukController');
-			}
-			elseif ($this->session->userdata('level') == 1) {
-				redirect('instansiController');
-			}
-			elseif ($this->session->userdata('level') == 0) {
-				redirect('adminController');
-			}					
-			
-		}
-		else {
-			redirect('login');
-		}
+    	}
 	}
 
 	public function logout() {
 		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('level');
 		session_destroy();
 		redirect('login');
 	}

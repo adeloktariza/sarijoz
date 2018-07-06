@@ -3,12 +3,13 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Admin Bogor Censing</a>
+    <a class="navbar-brand" href="index.html">Admin Sarijoz</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      	
         <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="<?php echo base_url('adminController'); ?>">
             <i class="fa fa-fw fa-dashboard"></i>
@@ -16,33 +17,21 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Laporan">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_laporan'); ?>">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">&nbsp;Laporan</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Berita">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_berita'); ?>">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">&nbsp;Berita</span>
+          <a class="nav-link" href="<?php echo base_url('adminController/page_product'); ?>">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">&nbsp;Manajemen Produk</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategori">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_kategori'); ?>">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">&nbsp;Kategori</span>
+          <a class="nav-link" href="<?php echo base_url('adminController/page_suplier'); ?>">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">&nbsp;Manajemen Suplier</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategori">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_register_admin'); ?>">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">&nbsp;Admin Panel</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategori">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_register_instansi'); ?>">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">&nbsp;Instansi Panel</span>
+          <a class="nav-link" href="<?php echo base_url('adminController/page_user'); ?>">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">&nbsp;Manajemen User</span>
           </a>
         </li>
        
