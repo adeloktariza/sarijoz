@@ -16,13 +16,13 @@
             <span class="nav-link-text">&nbsp;Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Laporan">
+        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Laporan">
           <a class="nav-link" href="<?php echo base_url('adminController/page_product'); ?>">
             <i class="fa fa-fw fa-cog"></i>
             <span class="nav-link-text">&nbsp;Manajemen Produk</span>
           </a>
         </li>
-        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Kategori">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategori">
           <a class="nav-link" href="<?php echo base_url('adminController/page_suplier'); ?>">
             <i class="fa fa-fw fa-cog"></i>
             <span class="nav-link-text">&nbsp;Manajemen Suplier</span>

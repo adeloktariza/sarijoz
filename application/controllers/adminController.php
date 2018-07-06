@@ -9,6 +9,7 @@ class AdminController extends CI_Controller {
 		$this->load->library('twig');
 		$this->load->model('user_m');
 		$this->load->model('suplier_m');
+		$this->load->model('kategori_m');
 		$this->twig->add_function('base_url');
 		$this->load->library('form_validation');
 
@@ -47,6 +48,65 @@ class AdminController extends CI_Controller {
 		$this->load->view('view_suplier', $data);
 	}
 
+
+	public function page_kategori() {
+
+
+		$data['username'] = $this->session->userdata('username');
+		$data['kategori'] = $this->kategori_m->get_kategori()->result();
+
+		//print_r($data['kategori']);
+		$this->load->view('view_kategori', $data);
+	}
+
+	public function add_kategori(){
+
+
+		$nama_kategori = $this->input->post('nama_kategori');
+		$keterangan_kategori = $this->input->post('keterangan_kategori');
+ 
+		$data = array(
+			'id_kategori' => "",
+			'nama_kategori' => $nama_kategori,
+			'keterangan_kategori' => $keterangan_kategori
+			);
+
+		$query = $this->kategori_m->add_kategori($data);
+
+		if ($query) {
+			$message = array('status' => true, 'message' => 'Berhasil menambahkan kategori');
+        }else{ 
+        	$message = array('status' => true, 'message' => 'Gagal menambahkan kategori');
+        }
+
+		redirect('AdminController/page_kategori');
+	}
+
+	public function update_kategori()
+	{
+		$id= $this->uri->segment(3);
+
+		$nama_kategori = $this->input->post('nama_kategori');
+		$keterangan_kategori = $this->input->post('keterangan_kategori');
+
+		
+ 
+		$data = array(
+			'id_kategori' => $id,
+			'nama_kategori' => $nama_kategori,
+			'keterangan_kategori' => $keterangan_kategori
+		);
+
+		$where = array(
+			'id_kategori' => $id
+		);
+
+		$this->kategori_m->update_kategori($where,$data);
+
+		redirect('AdminController/page_kategori');
+	}
+
+
 	public function add_user(){
 
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[users.username]');
@@ -72,6 +132,58 @@ class AdminController extends CI_Controller {
 		redirect('AdminController/page_user');
 	}
 
+	public function add_suplier(){
+
+
+		$nama_suplier = $this->input->post('nama_suplier');
+		$telepon = $this->input->post('telepon');
+		$alamat = $this->input->post('alamat');
+		
+ 
+		$data = array(
+			'id_suplier' => "",
+			'nama_suplier' => $nama_suplier,
+			'telepon' => $telepon,
+			'alamat' => $alamat
+			);
+
+		$query = $this->suplier_m->add_suplier($data);
+
+		if ($query) {
+			$message = array('status' => true, 'message' => 'Berhasil menambahkan suplier');
+        }else{ 
+        	$message = array('status' => true, 'message' => 'Gagal menambahkan suplier');
+        }
+
+		redirect('AdminController/page_suplier');
+	}
+
+	public function update_suplier()
+	{
+		$id= $this->uri->segment(3);
+
+		$nama_suplier = $this->input->post('nama_suplier');
+		$telepon = $this->input->post('telepon');
+		$alamat = $this->input->post('alamat');
+		
+ 
+		$data = array(
+			'id_suplier' => $id,
+			'nama_suplier' => $nama_suplier,
+			'telepon' => $telepon,
+			'alamat' => $alamat
+		);
+
+		$where = array(
+			'id_suplier' => $id
+		);
+
+		$this->suplier_m->update_suplier($where,$data);
+
+		redirect('AdminController/page_suplier');
+	}
+
+
 	public function delete_user()
 	{
 		$id= $this->uri->segment(3);
@@ -79,6 +191,24 @@ class AdminController extends CI_Controller {
 		$this->user_m->delete_user($id);
 
 		redirect('adminController/page_user');
+	}
+
+	public function delete_suplier()
+	{
+		$id= $this->uri->segment(3);
+
+		$this->suplier_m->delete_suplier($id);
+
+		redirect('adminController/page_suplier');
+	}
+
+	public function delete_kategori()
+	{
+		$id= $this->uri->segment(3);
+
+		$this->kategori_m->delete_kategori($id);
+
+		redirect('adminController/page_kategori');
 	}
 
 }

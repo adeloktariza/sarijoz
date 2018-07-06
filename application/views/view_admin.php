@@ -28,6 +28,12 @@
             <span class="nav-link-text">&nbsp;Manajemen Suplier</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Laporan">
+          <a class="nav-link" href="<?php echo base_url('adminController/page_kategori'); ?>">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">&nbsp;Manajemen Kategori</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategori">
           <a class="nav-link" href="<?php echo base_url('adminController/page_user'); ?>">
             <i class="fa fa-fw fa-cog"></i>

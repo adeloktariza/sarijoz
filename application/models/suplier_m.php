@@ -16,17 +16,25 @@ class Suplier_m extends CI_Model {
 
 	}
 
-	public function add_user($data){
+	public function add_suplier($data){
 		
-		$query = $this->db->insert('user',$data);
+		$query = $this->db->insert('suplier',$data);
 
       	return $query;
 	}
+
+	public function update_suplier($where,$data)
+	{
+
+		$this->db->where($where);
+		$this->db->update('suplier',$data);
+		
+	}	
 	
 
-	public function delete_user($id){
+	public function delete_suplier($id){
 
-        $this->db->delete('user',array('id_user' => $id));
+        $this->db->delete('suplier',array('id_suplier' => $id));
 	}
 
 	

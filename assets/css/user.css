@@ -352,3 +352,7 @@ table.list-t thead{
 table.list-t th.id_table, table.list-t td.id_table{
 	text-align: center;
 }
+
+.suplier-p{
+	margin-top: 20px;
+}
