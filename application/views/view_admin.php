@@ -3,7 +3,8 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Admin Sarijoz</a>
+    <img class="logo-sari" src="<?php echo base_url();?>/assets/images/logo_fix.jpg">
+    <a class="navbar-brand" href="index.html">PT. SARIJOZ INDONESIA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,7 +18,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Laporan">
-          <a class="nav-link" href="<?php echo base_url('adminController/page_product'); ?>">
+          <a class="nav-link" href="<?php echo base_url('adminController/page_produk'); ?>">
             <i class="fa fa-fw fa-cog"></i>
             <span class="nav-link-text">&nbsp;Manajemen Produk</span>
           </a>
@@ -57,7 +58,7 @@
         </li>
 		<li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="<?php echo base_url('adminController/logout'); ?>">
-            <i class="fa fa-fw fa-sign-out"></i>Logout
+            <i class="fa fa-fw fa-sign-out"></i>Keluar
           </a>
         </li>
       </ul>
@@ -163,8 +164,8 @@
           </div>
           <div class="modal-body">Anda akan dikembalikan ke halaman login.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?php echo base_url('login/logout')?>">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+            <a class="btn btn-primary" href="<?php echo base_url('login/logout')?>">Keluar</a>
           </div>
         </div>
       </div>

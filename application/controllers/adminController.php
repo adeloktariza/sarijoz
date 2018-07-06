@@ -10,6 +10,7 @@ class AdminController extends CI_Controller {
 		$this->load->model('user_m');
 		$this->load->model('suplier_m');
 		$this->load->model('kategori_m');
+		$this->load->model('produk_m');
 		$this->twig->add_function('base_url');
 		$this->load->library('form_validation');
 
@@ -57,6 +58,17 @@ class AdminController extends CI_Controller {
 
 		//print_r($data['kategori']);
 		$this->load->view('view_kategori', $data);
+	}
+	public function page_produk() {
+
+
+		$data['username'] = $this->session->userdata('username');
+		$data['produk'] = $this->produk_m->get_produk()->result();
+		$data['kategori'] = $this->kategori_m->get_kategori()->result();
+		$data['suplier'] = $this->suplier_m->get_suplier()->result();
+
+		//print_r($data['kategori']);
+		$this->load->view('view_produk', $data);
 	}
 
 	public function add_kategori(){
@@ -183,6 +195,36 @@ class AdminController extends CI_Controller {
 		redirect('AdminController/page_suplier');
 	}
 
+	public function add_produk(){
+
+
+		$nama_produk = $this->input->post('nama_produk');
+		$nama_kategori = $this->input->post('addKategori');
+		$nama_suplier = $this->input->post('addSuplier');
+		$harga = $this->input->post('harga');
+		$keterangan = $this->input->post('keterangan');
+		
+ 
+		$data = array(
+			'id_produk' => "",
+			'nama_produk' => $nama_produk,
+			'id_kategori' => $nama_kategori,
+			'id_suplier' => $nama_suplier,
+			'harga' => $harga,
+			'keterangan' => $keterangan,
+			);
+
+		$query = $this->produk_m->add_produk($data);
+
+		if ($query) {
+			$message = array('status' => true, 'message' => 'Berhasil menambahkan suplier');
+        }else{ 
+        	$message = array('status' => true, 'message' => 'Gagal menambahkan suplier');
+        }
+
+		redirect('AdminController/page_produk');
+	}
+
 
 	public function delete_user()
 	{
@@ -209,6 +251,15 @@ class AdminController extends CI_Controller {
 		$this->kategori_m->delete_kategori($id);
 
 		redirect('adminController/page_kategori');
+	}
+
+	public function delete_produk()
+	{
+		$id= $this->uri->segment(3);
+
+		$this->produk_m->delete_produk($id);
+
+		redirect('adminController/page_produk');
 	}
 
 }
